@@ -50,8 +50,8 @@ jobs:
       run: terraform apply -lock=false -auto-approve
       continue-on-error: true
       
-    #- name: Terraform Destroy
-    #  id: Destory
-    #  run: terraform destroy -auto-approve
-    #  continue-on-error: true
+    - name: Terraform Destroy
+      id: Destory
+      run: terraform destroy -auto-approve
+      continue-on-error: true
     
