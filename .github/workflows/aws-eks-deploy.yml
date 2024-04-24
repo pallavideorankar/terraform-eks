@@ -47,7 +47,7 @@ jobs:
       
     - name: Terraform Apply
       id: Apply
-      run: terraform apply -auto-approve
+      run: terraform apply -lock=false -auto-approve
       continue-on-error: true
       
     #- name: Terraform Destroy
