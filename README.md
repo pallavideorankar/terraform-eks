@@ -21,6 +21,16 @@ https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 
 Its very easy to connect Terraform with AWS. Run `aws configure` command and provide the AWS Security credentials as shown in the video.
 
+### Create a DynaoDB Table Manually
+
+aws dynamodb create-table \
+   --region ap-south-1 \
+   --table-name terraform-state-lock-dynamodb \
+   --attribute-definitions AttributeName=LockID,AttributeType=S \
+   --key-schema AttributeName=LockID,KeyType=HASH \
+   --provisioned-throughput ReadCapacityUnits=20,WriteCapacityUnits=20
+
+
 ### Initialize Terraform
 
 Clone the repository and Run `terraform init`. This will intialize the terraform environment for you and download the modules, providers and other configuration required.
